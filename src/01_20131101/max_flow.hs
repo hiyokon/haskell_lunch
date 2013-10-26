@@ -3,23 +3,9 @@ import ADT.Graph
 import ADT.GraphAL
 import ADT.Stack
 
------- Main
+---- Main
 
--- input Graph adjacent List representation
-inputData = array (1, 11) [( 1,[( 5,400),( 6,800)])
-                          ,( 2,[( 5,200),( 8,500)])
-                          ,( 3,[( 5,400),(11,900)])
-                          ,( 4,[( 5,400),(10,100)])
-                          ,( 5,[( 5,400),(11,100)])
-                          ,( 6,[])
-                          ,( 7,[])
-                          ,( 8,[])
-                          ,( 9,[])
-                          ,(10,[])
-                          ,(11,[])
-                          ]
-
--- biGraph = mkGraph True (1, 11) (adListToAdMatrix inputData)
+------ biGraph = mkGraph True (1, 11) (adListToAdMatrix inputData)
 
 adListToAdMatrix :: [(u, [(v, w)])] -> [((u, v), w)]
 adListToAdMatrix []           = []
@@ -66,9 +52,7 @@ adMatrixToAdList (ms:mss) = ls : (adMatrixToAdList mss)
 
 ------ Test Data
 
-
-
------- Memo
+---- Memo
 
 -- type Graph n w = [(n,[n,w])]
 -- type Graph = ([Node],[Edge])
@@ -112,8 +96,8 @@ adMatrixToAdList (ms:mss) = ls : (adMatrixToAdList mss)
 -- type Matrix n w = Array ((n, n),(n, n)) w
 -- mkMatrix m n elm = array ((1,1),(m,n)) [((i,j), elm) | i <- [1..m], j <- [1..n]]
 
------- {Depth,Breadth}-first search
--- 
+-- {Depth,Breadth}-first search
+--
 -- depthFirstSearch :: Ix a => a -> Graph a -> [a]
 -- depthFirstSearch start g = reverse (dfs [start] [])
 --     where
@@ -162,3 +146,4 @@ graphTest = mkGraph True (1,5) [(1,2,(1,3,4))
                                 ,(1,4,(1,3,4))
                                 ]
 -}
+
