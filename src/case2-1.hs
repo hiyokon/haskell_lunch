@@ -12,7 +12,7 @@ processData = unlines . helper . lines
         helper :: [String] -> [String]
         helper []  = []
         helper [line] = [line]
-        helper (currLine:(postLine:rest)) = if postLine =~ encodeString "キャラ
+        helper (currLine:(postLine:rest)) = if postLine =~ encodeString "キャラ"
                                   then joinWords ++ helper rest
                                   else currWords ++ helper (postLine:rest)
             where
